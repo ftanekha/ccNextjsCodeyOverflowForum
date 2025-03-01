@@ -1,36 +1,24 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+### Intro to Next.js
+## CodeyOverflow Forum
+In this project, you’ll practice your knowledge of the App Router in Next.js. You will be building the CodeyOverflow Forum application, 
+which users will use to view topics, questions, and user information. Currently, many paths aren’t working properly and the application itself does not start. 
+To fix this, you will need to:
 
-First, run the development server:
+# enable the App Router
+# define the /topics route
+# define a dynamic nested segment in /topics
+# optimize links
+# use shared layouts
+# handle errors
+Before you start coding, take a look at the files currently present in the workspace. At the root level, you’ll notice a /components folder containing reusable React components, a /data folder containing the application data, and a /lib folder containing some utility functions. In the /app folder you’ll see:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# the root page.tsx file
+# the route groups (account), (discussion), (info)
+# a /about path defined
+# a /questions path defined
+# a /questions/[id] dynamic path defined.
+# a /users path defined
+# a /users/[userId] dynamic path defined
+# Once you begin, you can use npm run dev in the workspace terminal to start the Next.js application.
