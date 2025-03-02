@@ -17,18 +17,20 @@ export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getRandomElementsWithDelay(POSTS, 5).then((randomPosts) => {
+    getRandomElementsWithDelay(POSTS, 5)
+    .then((randomPosts) => {
       setFeaturedPosts(randomPosts);
     });
+
     getRandomElementsWithDelay(USERS, 1)
-      .then((randomUsers) => {
-        if (randomUsers.length > 0) {
-          setFeaturedUser(randomUsers[0]);
-        }
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    .then((randomUsers) => {
+      if (randomUsers.length > 0) {
+        setFeaturedUser(randomUsers[0]);
+      }
+    })
+    .finally(() => {
+      setIsLoading(false);
+    });
   }, []);
 
   return (

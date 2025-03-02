@@ -1,4 +1,7 @@
 import './globals.css'
+import Nav from '../components/navigation/Nav'
+import UrlBar from '../lib/UrlBar/UrlBar'
+
 
 interface MetaData {title: string, description: string}
 
@@ -11,8 +14,12 @@ function RootLayout(
   { children }: { children: React.ReactNode }
 ){
   return (
-    <html lang="en">
-      <body className=''>{children}</body>
+    <html lang="en" className='bg-slate-200 p-4'>
+      <body className='bg-slate-700 p-4 rounded-lg'>
+        <Nav/>
+        {children}
+        <UrlBar/>
+      </body>
     </html>
   )
 }

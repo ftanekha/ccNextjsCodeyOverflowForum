@@ -8,7 +8,7 @@ type ButtonProps = {
   onClick?: () => void
 }
 
-function Button({ label, href, onClick }: ButtonProps) {
+export default function Button({ label, href, onClick }: ButtonProps) {
   return href ? (
     <Link href={href ?? ''} className={styles.button}>
       {label}
@@ -19,5 +19,3 @@ function Button({ label, href, onClick }: ButtonProps) {
     </button>
   )
 }
-
-export default Button
