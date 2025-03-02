@@ -13,16 +13,16 @@ function Nav() {
           <Button label="Home" href="/" />
         </li>
         <li>
-          <Button label="About" href="/about" />
+          <Button label="About" href="/info/about" />
         </li>
         <li>
-          <Button label="Topics" href="/topics" />
+          <Button label="Topics" href="/discussion/topics" />
         </li>
         <li>
-          <Button label="All Questions" href="/questions" />
+          <Button label="All Questions" href="/discussion/questions" />
         </li>
         <li>
-          <Button label="All Users" href="/users" />
+          <Button label="All Users" href="/account/users" />
         </li>
       </ul>
     </nav>

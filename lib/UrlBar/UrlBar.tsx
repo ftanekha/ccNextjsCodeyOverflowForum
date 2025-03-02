@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import styles from './UrlBar.module.css'
 
 function UrlBar({baseURL} : {baseURL: string}) {
-  const pathname = usePathname();
+  const pathname = usePathname().toLowerCase();
   const [firstRender, setFirstRender] = useState(true)
   const [inputURL, setInputURL] = useState(baseURL)
 
@@ -23,14 +23,14 @@ function UrlBar({baseURL} : {baseURL: string}) {
   return(
     <form action={navigate}>
       <input
-      className={styles.urlInput} 
+      className={`${styles.urlInput} font-semibold`}
       readOnly={firstRender}
       name='url'
       value={firstRender? "fetching page...": inputURL}
-      onChange={(e) => setInputURL(e.target.value)}
+      onChange={(e) => setInputURL((e.target.value).toLowerCase())}
       />
     </form>
   )
 }
 
-export default () => <UrlBar baseURL='http://localhost:4001'/>
+export default UrlBar

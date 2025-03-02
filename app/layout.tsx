@@ -18,7 +18,7 @@ function RootLayout(
       <body className='bg-slate-700 p-4 rounded-lg'>
         <Nav/>
         {children}
-        <UrlBar/>
+        <UrlBar baseURL='http://localhost:4001'/>
       </body>
     </html>
   )
