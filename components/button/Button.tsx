@@ -10,11 +10,11 @@ type ButtonProps = {
 
 export default function Button({ label, href, onClick }: ButtonProps) {
   return href ? (
-    <Link href={href ?? ''} className={styles.button}>
+    <Link href={href ?? ''} className={`${styles.button} hover:bg-slate-300`}>
       {label}
     </Link>
   ) : (
-    <button className={styles.button} onClick={onClick}>
+    <button className={`${styles.button} hover:bg-slate-300`} onClick={onClick}>
       {label}
     </button>
   )
