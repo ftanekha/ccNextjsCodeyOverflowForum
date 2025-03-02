@@ -5,12 +5,15 @@ import Button from '../../../../components/button/Button'
 import { capitalize, fetchPostByTopic, Post } from '../../../../lib/utils'
 
 function Topic(){
-    const topicId = usePathname().toLowerCase()
     const [topicPosts, setTopicPosts] = useState<Post[]>([])
+
+    const topicId = usePathname()
+    const topicIdArr = topicId.split('/')
+    const currentPath = topicIdArr[topicIdArr.length - 1]
 
     useEffect(
         () => {
-            fetchPostByTopic(topicId)
+            fetchPostByTopic(currentPath.toLowerCase())
             .then(
                 fetchedPosts => setTopicPosts(fetchedPosts)
             )
@@ -19,7 +22,7 @@ function Topic(){
     
     return (
         <div>
-            <h1>{capitalize(topicId)}</h1>
+            <h1>{capitalize(currentPath)}</h1>
             <ul>
                 {
                     topicPosts.map(

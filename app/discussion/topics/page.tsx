@@ -12,7 +12,7 @@ function Topics(){
                         (category) => (
                             <li key={category}>
                                 <Button
-                                    href={`/topics/${category}`}
+                                    href={`/discussion/topics/${category}`}
                                     label={capitalize(category)}
                                 />
                             </li>
