@@ -14,6 +14,7 @@ function Topics(){
                                 <Button
                                     href={`/discussion/topics/${category}`}
                                     label={capitalize(category)}
+                                    background='text-gray-400'
                                 />
                             </li>
                         )

@@ -31,6 +31,7 @@ function Topic(){
                                 <Button
                                     href={`/questions/${post.id}`}
                                     label={post.title}
+                                    background='text-gray-400'
                                 />
                             </li>
                         )
