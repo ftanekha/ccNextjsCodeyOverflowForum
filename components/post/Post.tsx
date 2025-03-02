@@ -15,12 +15,12 @@ function Post(
 ) {
   return (
     <div className={styles.container}>
-      <a href={"/questions/REPLACE"} >
+      <a href={`/discussion/questions/${id}`} >
         <h2 className={styles.title}>{title}</h2>
       </a>
       <p>{body}</p>
       <small className={styles.info}>
-        <a href={"/users/REPLACE"} >
+        <a href={`/account/users/${userId}`} >
           User: {userId}
         </a>
       </small>
