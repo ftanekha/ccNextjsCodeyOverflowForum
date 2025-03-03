@@ -28,11 +28,7 @@ function Topic(){
                     topicPosts.map(
                         (post) => (
                             <li key={post.id}>
-                                <Button
-                                    href={`/questions/${post.id}`}
-                                    label={post.title}
-                                    background='text-gray-400'
-                                />
+                                <Button label={post.title}/>
                             </li>
                         )
                     )
