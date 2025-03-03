@@ -5,7 +5,7 @@ import Button from '../../../../components/button/Button'
 import { useRouter } from 'next/navigation'
 
 function UserPage({ params }: { params: { userId: string } }) {
-  const { userId } = params
+  let { userId } = params
   const router = useRouter()
   const [user, setUser] = useState<User | null>(null)
   const [userPosts, setUserPosts] = useState<Post[]>([])
