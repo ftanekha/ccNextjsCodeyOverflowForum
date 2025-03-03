@@ -1,7 +1,12 @@
+'use client'
+
 import { USERS, User } from '../../../data/userData'
 import Button from '../../../components/button/Button'
+import { usePathname } from 'next/navigation'
 
 function Page() {
+  const path = usePathname()
+
   return (
     <>
       <h1>All Users</h1>
@@ -11,7 +16,7 @@ function Page() {
             (user: User) => (
               <li key={user.id}>
                 <Button
-                  href={`/users/${user.id}`}
+                  href={`${path}/${user.id}`}
                   label={`User ID: ${user.id}`}
                 />
               </li>
