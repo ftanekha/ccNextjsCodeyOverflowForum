@@ -8,7 +8,7 @@ function Layout(
         <div>
             {children}
             <footer>
-                <Button href="/topics" label="Back To All Topics" background="bg-gray-900 text-gray-200"/>
+                <Button href="/discussion/topics" label="Back To All Topics" background="bg-gray-900 text-gray-200"/>
             </footer>
         </div>
     )

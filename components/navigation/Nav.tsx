@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import Button from '../button/Button'
 import styles from './Nav.module.css'
 
