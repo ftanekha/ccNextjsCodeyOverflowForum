@@ -16,7 +16,7 @@ export default function Button({ label, href, background, onClick }: ButtonProps
   const path = usePathname()
 
   return href ? (
-    <Link href={href ?? ''} className={`${styles.button} ${background} hover:bg-slate-300 ${(path === href ) && 'active'}`}>
+    <Link href={href ?? ''} className={`hover:bg-slate-300 hover:text-slate-700 text-slate-300 font-black ${styles.button} ${background} ${(path === href ) && 'active'}`}>
       {label}
     </Link>
   ) : (
