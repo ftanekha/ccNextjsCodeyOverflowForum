@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+import { notFound } from 'next/navigation'
 import {
   fetchPostById,
   fetchCommentsByPostId,
@@ -23,7 +24,7 @@ function QuestionsPage(
         try {
           const fetchedQuestion = await fetchPostById(postId)
           if (!fetchedQuestion) {
-            throw new Error('Invalid post ID')
+            return notFound()
           }
           const fetchedComments = await fetchCommentsByPostId(postId)
           setQuestion(fetchedQuestion)
@@ -45,8 +46,8 @@ function QuestionsPage(
 
   return (
     <div>
-      <h1>{question.title}</h1>
-      <p>{question.body}</p>
+      <h1>{question?.title}</h1>
+      <p>{question?.body}</p>
       <div>
         <h2>Comments</h2>
         {
@@ -64,7 +65,7 @@ function QuestionsPage(
               }
             </ul>
           ) : (
-            <p>No comments available.</p>
+              notFound()
           )
         }
       </div>
