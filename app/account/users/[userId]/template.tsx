@@ -10,4 +10,4 @@ function Template(
     )
 }
   
-  export default Template
+export default Template

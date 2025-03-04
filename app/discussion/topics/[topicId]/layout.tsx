@@ -7,13 +7,13 @@ import { useRouter } from 'next/navigation'
 function Layout(
     {children}:{children: React.ReactNode}
 ){
-    const router = useRouter()
+    const {back} = useRouter()
     
     return (
         <div>
             {children}
             <footer>
-                <Button label="Back To All Topics" background="bg-gray-900 text-gray-200" onClick={router.back}/>
+                <Button label="Back To All Topics" background="bg-gray-900 text-gray-200" onClick={back}/>
             </footer>
         </div>
     )

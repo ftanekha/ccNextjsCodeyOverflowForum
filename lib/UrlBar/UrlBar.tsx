@@ -12,22 +12,26 @@ function UrlBar({baseURL} : {baseURL: string}) {
   const [firstRender, setFirstRender] = useState(true)
   const [inputURL, setInputURL] = useState(baseURL)
 
-  useEffect(() => {
-    setInputURL(baseURL + pathname);
-  }, [pathname])
+  useEffect(
+    ()=> setInputURL(baseURL + pathname), [pathname]
+  )
 
-  useEffect(() => {
-    setFirstRender(false)
-  }, [])
+  useEffect(
+    ()=> setFirstRender(false), []
+  )
+
+  function handleChange({target: {value}}){
+    setInputURL(value.toLowerCase())
+  }
 
   return(
     <form action={navigate}>
       <input
-      className={`${styles.urlInput} font-semibold`}
-      readOnly={firstRender}
-      name='url'
-      value={firstRender? "fetching page...": inputURL}
-      onChange={(e) => setInputURL((e.target.value).toLowerCase())}
+        className={ `${styles.urlInput} font-semibold` }
+        readOnly={firstRender}
+        name='url'
+        value={ firstRender ? "fetching page..." : inputURL }
+        onChange={handleChange}
       />
     </form>
   )

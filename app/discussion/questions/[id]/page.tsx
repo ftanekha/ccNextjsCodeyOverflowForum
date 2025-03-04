@@ -21,28 +21,24 @@ function QuestionsPage(
       const postId = parseInt(id, 10)
 
       const fetchData = async () => {
-        try {
+        try{
           const fetchedQuestion = await fetchPostById(postId)
-          if (!fetchedQuestion) {
-            return notFound()
-          }
-          const fetchedComments = await fetchCommentsByPostId(postId)
+          if(!fetchedQuestion) return notFound()
           setQuestion(fetchedQuestion)
+
+          const fetchedComments = await fetchCommentsByPostId(postId)
           setComments(fetchedComments)
-        } catch (error) {
+        }catch(error){
           console.error(error)
-        } finally {
+        }finally{
           setIsLoading(false)
         }
       }
       fetchData()
-    }, 
-    [id]
+    }, [id]
   )
 
-  if (isLoading) {
-    return <div>Loading...</div>
-  }
+  if(isLoading) return <div>Loading...</div>
 
   return (
     <div>
@@ -51,22 +47,24 @@ function QuestionsPage(
       <div>
         <h2>Comments</h2>
         {
-          comments.length > 0 ? (
+          comments.length > 0 
+            ? 
+          (
             <ul>
               {
                 comments.map(
-                  (comment) => (
+                  comment => (
                     <li key={comment.id}>
-                      <strong>{comment.name}</strong> ({comment.email})
+                      <strong>{comment.name}</strong>{comment.email}
                       <p>{comment.body}</p>
                     </li>
                   )
                 )
               }
             </ul>
-          ) : (
-              notFound()
-          )
+          ) 
+            : 
+          notFound()
         }
       </div>
     </div>

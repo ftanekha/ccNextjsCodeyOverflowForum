@@ -2,40 +2,40 @@
 import React, { useEffect, useState } from 'react'
 import { fetchUserData, fetchUserPosts, User, Post } from '../../../../lib/utils'
 import Button from '../../../../components/button/Button'
-import { useRouter } from 'next/navigation'
 
-function UserPage({ params }: { params: { userId: string } }) {
+function UserPage(
+  { params }: { params: { userId: string } }
+){
   let { userId } = params
-  const router = useRouter()
   const [user, setUser] = useState<User | null>(null)
   const [userPosts, setUserPosts] = useState<Post[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    const userIdNumber = parseInt(userId, 10)
+  useEffect(
+    () => {
+      const userIdNumber = parseInt(userId, 10)
 
-    const fetchData = async () => {
-      try {
-        const fetchedUser = await fetchUserData(userIdNumber)
-        if (!fetchedUser) {
-          throw new Error('Invalid user ID')
+      const fetchData = async () => {
+        try{
+          const fetchedUser = await fetchUserData(userIdNumber)
+          if(!fetchedUser) throw new Error('Invalid user ID')
+
+          const fetchedUserPosts = await fetchUserPosts(userIdNumber)
+
+          setUser(fetchedUser)
+          setUserPosts(fetchedUserPosts)
+        }catch(error){
+          console.error(error)
+        }finally{
+          setIsLoading(false)
         }
-        const fetchedUserPosts = await fetchUserPosts(userIdNumber)
-        setUser(fetchedUser)
-        setUserPosts(fetchedUserPosts)
-      } catch (error) {
-        console.error(error)
-      } finally {
-        setIsLoading(false)
       }
-    }
 
-    fetchData()
-  }, [userId])
+      fetchData()
+    }, [userId]
+  )
 
-  if (isLoading) {
-    return <div>Loading user data...</div>
-  }
+  if(isLoading) return <div>Loading user data...</div>
 
   if(!user) {
     return (

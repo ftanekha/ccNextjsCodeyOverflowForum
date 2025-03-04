@@ -2,7 +2,6 @@ import './globals.css'
 import Nav from '../components/navigation/Nav'
 import UrlBar from '../lib/UrlBar/UrlBar'
 
-
 interface MetaData {title: string, description: string}
 
 export const metadata: MetaData = {
@@ -18,7 +17,7 @@ function RootLayout(
       <body className='bg-slate-700 p-4 rounded-lg'>
         <Nav/>
         {children}
-        <UrlBar baseURL='http://localhost:4001'/>
+        <UrlBar baseURL={`http://localhost:${process.env.PORT}`}/>
       </body>
     </html>
   )

@@ -9,7 +9,7 @@ function Topics(){
             <ul>
                 {
                     CATEGORIES.map(
-                        (category) => (
+                        category => (
                             <li key={category}>
                                 <Button
                                     href={`/discussion/topics/${category}`}

@@ -1,12 +1,9 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
 import Button from '../button/Button'
 import styles from './Nav.module.css'
 
 function Nav() {
-  const pathname = "REPLACE ME"
-
   return (
     <nav>
       <ul className={styles.navUl}>
