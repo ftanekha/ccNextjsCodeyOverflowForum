@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import Button from '../../../../components/button/Button'
 import { capitalize, fetchPostByTopic, Post } from '../../../../lib/utils'
 
 function Topic(){
@@ -22,15 +21,18 @@ function Topic(){
     
     return (
         <div>
-            <h1>{capitalize(currentPath)}</h1>
+            <h1 className='mt-6 mb-4 text-slate-300 text-md font-semibold underline'>{capitalize(currentPath)}</h1>
             <ul>
                 {
                     topicPosts.map(
-                        (post) => (
-                            <li key={post.id}>
-                                <Button label={post.title}/>
-                            </li>
-                        )
+                        (post, index)=> {
+                            return (
+                                <li key={post.id}>
+                                    <span className='pr-2 text-xs text-slate-600 font-black'>{index}</span>
+                                    <span className=' text-slate-400 font-light text-xs'>{capitalize(post.title)}</span>
+                                </li>
+                            )
+                        }
                     )
                 }
             </ul>

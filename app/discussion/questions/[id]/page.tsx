@@ -6,6 +6,7 @@ import {
   fetchCommentsByPostId,
   Post,
   Comment,
+  capitalize
 } from '../../../../lib/utils'
 
 function QuestionsPage(
@@ -42,10 +43,10 @@ function QuestionsPage(
 
   return (
     <div>
-      <h1>{question?.title}</h1>
-      <p>{question?.body}</p>
+      <h1 className='pt-4 px-2 text-xs text-slate-200 bg-black opacity-80'>{question?.title}</h1>
+      <p className='pb-4 px-2 font-black text-xs text-slate-400 bg-black opacity-50'>{question?.body}</p>
       <div>
-        <h2>Comments</h2>
+        <h2 className='my-4 text-slate-300'>Comments</h2>
         {
           comments.length > 0 
             ? 
@@ -54,9 +55,9 @@ function QuestionsPage(
               {
                 comments.map(
                   comment => (
-                    <li key={comment.id}>
-                      <strong>{comment.name}</strong>{comment.email}
-                      <p>{comment.body}</p>
+                    <li key={comment.id} className='text-sm'>
+                      <strong className='text-xs text-slate-200'>{comment.name}</strong> {comment.email}
+                      <p className='text-xs text-slate-400'>{capitalize(comment.body)}</p>
                     </li>
                   )
                 )

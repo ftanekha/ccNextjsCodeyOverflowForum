@@ -5,7 +5,7 @@ function Template(
     return (
     <div>
         {children}
-        <footer className="text-slate-300 text-sm">Last Checked: {requestTime.toLocaleTimeString()}</footer>
+        <footer className="text-xs text-black">Last Checked: {requestTime.toLocaleTimeString()}</footer>
     </div>
     )
 }

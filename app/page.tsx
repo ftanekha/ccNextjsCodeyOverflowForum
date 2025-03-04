@@ -8,7 +8,6 @@ import {
   User,
 } from "../lib/utils"; // Import relevant functions and types
 
-import styles from "./page.module.css";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -34,18 +33,18 @@ export default function HomePage() {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`my-6 text-sm text-slate-300`}>
         <h1>Welcome To CodeyOverflow Forum</h1>
         <p>A question forum for the curious.</p>
       </header>
-      <h2>Featured Posts</h2>
+      <h2 className='text-slate-300 text-md font-semibold underline'>Featured Posts</h2>
       {
         isLoading 
           ? 
         <p>Loading featured posts...</p>
           : 
         (
-          <ul>
+          <ul className='mb-6 text-slate-400 text-sm'>
             {
               featuredPosts.map(
                 post => (
@@ -58,7 +57,7 @@ export default function HomePage() {
           </ul>
         )
       }
-      <h2>Featured User</h2>
+      <h2 className='text-slate-300 text-md font-semibold underline'>Featured User</h2>
       {
         isLoading 
           ?
@@ -66,14 +65,14 @@ export default function HomePage() {
           : 
         featuredUser ? 
         (
-          <div>
-            <p>Username: {featuredUser.username}</p>
-            <p>Name: {featuredUser.name}</p>
-            <p>Email: {featuredUser.email}</p>
+          <div className='mb-6'>
+            <p><span className='text-slate-400 text-sm'>Username:</span> {featuredUser.username}</p>
+            <p><span className='text-slate-400 text-sm'>Name:</span> {featuredUser.name}</p>
+            <p><span className='text-slate-400 text-sm'>Email:</span> {featuredUser.email}</p>
           </div>
         ) 
           :
-        <p>No featured user available.</p>
+        <p className='mb-6'>No featured user available.</p>
       }
     </>
   );

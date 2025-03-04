@@ -2,7 +2,6 @@
 
 body {
   font-family: BlinkMacSystemFont, sans-serif;
-  margin: 1rem;
 }
 
 footer {
@@ -19,5 +18,5 @@ li {
 }
 
 .active{
-  background-color: red;
+  background-color: tomato;
 }

@@ -25,7 +25,7 @@ function UrlBar({baseURL} : {baseURL: string}) {
   }
 
   return(
-    <form action={navigate}>
+    <form action={navigate}  className='mt-16'>
       <input
         className={ `${styles.urlInput} font-semibold` }
         readOnly={firstRender}

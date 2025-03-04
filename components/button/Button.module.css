@@ -1,12 +1,9 @@
 .button {
   text-decoration: none;
-  padding: .625rem 1.125rem;
   border-radius: .5rem;
-  font-weight: 500;
   border: 1px solid #ddd;
   display: inline-block;
-  font-family: inherit;
+  font-family: 'fira code';
   font-size: 1rem;
   cursor: pointer;
-  margin-right: .5rem;
 }

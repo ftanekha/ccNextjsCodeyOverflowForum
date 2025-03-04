@@ -8,19 +8,19 @@ function Nav() {
     <nav>
       <ul className={styles.navUl}>
         <li>
-          <Button label="Home" href="/" />
+          <Button label="Home" href="/" otherClasses='py-3 px-4 hover:bg-slate-300 hover:text-slate-700'/>
         </li>
         <li>
-          <Button label="About" href="/info/about" />
+          <Button label="About" href="/info/about" otherClasses='py-3 px-4 hover:bg-slate-300 hover:text-slate-700'/>
         </li>
         <li>
-          <Button label="Topics" href="/discussion/topics" />
+          <Button label="Topics" href="/discussion/topics" otherClasses='py-3 px-4 hover:bg-slate-300 hover:text-slate-700'/>
         </li>
         <li>
-          <Button label="All Questions" href="/discussion/questions" />
+          <Button label="All Questions" href="/discussion/questions" otherClasses='py-3 px-4 hover:bg-slate-300 hover:text-slate-700'/>
         </li>
         <li>
-          <Button label="All Users" href="/account/users" />
+          <Button label="All Users" href="/account/users" otherClasses='py-3 px-4 hover:bg-slate-300 hover:text-slate-700'/>
         </li>
       </ul>
     </nav>

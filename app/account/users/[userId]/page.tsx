@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+import { notFound } from 'next/navigation'
 import { fetchUserData, fetchUserPosts, User, Post } from '../../../../lib/utils'
 import Button from '../../../../components/button/Button'
 
@@ -37,25 +38,25 @@ function UserPage(
 
   if(isLoading) return <div>Loading user data...</div>
 
-  if(!user) {
-    return (
-      <div>
-        <h2>This User Does Not Exist!</h2>
-        <Button href="/users" label="All Users" />
-      </div>
-    )
-  }
+  if(!user) return notFound()
 
   return (
     <>
-      <h1>Username: {user.username}</h1>
-      <h2>Company: {user.company.name}</h2>
+      <h1 className='mt-4 text-slate-400 text-sm'>Username: {user.username}</h1>
+      <h2 className='mb-4 text-slate-400 text-sm'>Company: {user.company.name}</h2>
       <div>
-        <h3>User's Posts:</h3>
+        <h3 className='my-4 text-slate-500 text-sm'>User's Posts:</h3>
         <ul>
           {
             userPosts.map(
-              post => <li key={post.id}>{post.title}</li>
+              (post, index) => {
+                return (
+                  <li key={post.id} className='text-xs text-slate-600 font-black'>
+                    <span className='pr-2 text-xs text-slate-600 font-black'>{index}</span>
+                    <span className=' text-slate-400 font-light text-xs'>{post.title}</span>
+                  </li>
+                )
+              }
             )
           }
         </ul>

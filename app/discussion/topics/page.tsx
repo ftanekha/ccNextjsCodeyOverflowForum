@@ -5,7 +5,7 @@ import { capitalize } from '../../../lib/utils'
 function Topics(){
     return (
         <>
-            <h1>All Topics</h1>
+            <h1 className='my-4 text-slate-300'> All Topics</h1>
             <ul>
                 {
                     CATEGORIES.map(
@@ -14,7 +14,7 @@ function Topics(){
                                 <Button
                                     href={`/discussion/topics/${category}`}
                                     label={capitalize(category)}
-                                    background='text-gray-400'
+                                    otherClasses='py-1 px-4 mb-4 text-gray-400'
                                 />
                             </li>
                         )

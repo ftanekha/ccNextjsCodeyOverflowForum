@@ -8,7 +8,7 @@ function Page() {
 
   return (
     <>
-      <h1>All Users</h1>
+      <h1 className='my-4 text-slate-300'>All Users</h1>
       <ul>
         {
           USERS.map(
@@ -17,6 +17,7 @@ function Page() {
                 <Button
                   href={`${path}/${user.id}`}
                   label={`User ID: ${user.id}`}
+                  otherClasses='px-2'
                 />
               </li>
             )

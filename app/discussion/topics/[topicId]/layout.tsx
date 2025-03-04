@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import Button from '../../../../components/button/Button'
 import { useRouter } from 'next/navigation'
@@ -13,7 +12,7 @@ function Layout(
         <div>
             {children}
             <footer>
-                <Button label="Back To All Topics" background="bg-gray-900 text-gray-200" onClick={back}/>
+                <Button label="Back To All Topics" otherClasses="bg-red-900 hover:bg-gray-900 py-1 px-4 mb-4 text-gray-200 font-thin" onClick={back}/>
             </footer>
         </div>
     )

@@ -14,7 +14,7 @@ function RootLayout(
 ){
   return (
     <html lang="en" className='bg-slate-200 p-4'>
-      <body className='bg-slate-700 p-4 rounded-lg'>
+      <body className='my-8 `sm:w-4/5 md:w-1/2 md:mx-auto bg-slate-700 p-4 rounded-lg'>
         <Nav/>
         {children}
         <UrlBar baseURL={`http://localhost:${process.env.PORT}`}/>

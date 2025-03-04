@@ -4,13 +4,17 @@ import { POSTS, Post as PostType } from '../../../data/postData'
 function Page() {
   return (
     <>
-      <h1>Questions</h1>
+      <h2 className='my-4 text-slate-300'>Questions</h2>
       <ul>
-        {POSTS.map((post: PostType) => (
-          <li key={post.id}>
-            <Post post={post} />
-          </li>
-        ))}
+        {
+          POSTS.map(
+            (post: PostType) => (
+              <li key={post.id}>
+                <Post post={post} />
+              </li>
+            )
+          )
+        }
       </ul>
     </>
   )
