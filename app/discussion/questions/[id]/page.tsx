@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, use } from 'react'
 import { notFound } from 'next/navigation'
 import {
   fetchPostById,
@@ -12,7 +12,7 @@ import {
 function QuestionsPage(
   { params }: { params: { id: string } }
 ) {
-  const { id } = params
+  const { id } = React.use(params)
   const [question, setQuestion] = useState<Post | null>(null)
   const [comments, setComments] = useState<Comment[]>([])
   const [isLoading, setIsLoading] = useState(true)

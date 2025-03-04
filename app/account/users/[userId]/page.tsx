@@ -2,18 +2,18 @@
 import React, { useEffect, useState } from 'react'
 import { notFound } from 'next/navigation'
 import { fetchUserData, fetchUserPosts, User, Post } from '../../../../lib/utils'
-import Button from '../../../../components/button/Button'
 
 function UserPage(
   { params }: { params: { userId: string } }
 ){
-  let { userId } = params
+  let { userId } = React.use(params)
+  
   const [user, setUser] = useState<User | null>(null)
   const [userPosts, setUserPosts] = useState<Post[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(
-    () => {
+    ()=> {
       const userIdNumber = parseInt(userId, 10)
 
       const fetchData = async () => {
