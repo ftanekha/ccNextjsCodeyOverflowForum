@@ -8,7 +8,7 @@ function Page() {
 
   return (
     <>
-      <h1 className='my-4 text-slate-300'>All Users</h1>
+      <h1 className='my-4 text-slate-500 font-extrabold'>All Users</h1>
       <ul>
         {
           USERS.map(

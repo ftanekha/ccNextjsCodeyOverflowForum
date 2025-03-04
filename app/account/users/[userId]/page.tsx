@@ -45,7 +45,7 @@ function UserPage(
       <h1 className='mt-4 text-slate-400 text-sm'>Username: {user.username}</h1>
       <h2 className='mb-4 text-slate-400 text-sm'>Company: {user.company.name}</h2>
       <div>
-        <h3 className='my-4 text-slate-500 text-sm'>User's Posts:</h3>
+        <h3 className='my-4 text-slate-500 text-sm font-extrabold'>User's Posts:</h3>
         <ul>
           {
             userPosts.map(

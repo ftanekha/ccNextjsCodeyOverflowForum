@@ -33,11 +33,11 @@ export default function HomePage() {
 
   return (
     <>
-      <header className={`my-6 text-sm text-slate-300`}>
+      <header className={`my-6 text-sm font-extralight text-slate-300`}>
         <h1>Welcome To CodeyOverflow Forum</h1>
         <p>A question forum for the curious.</p>
       </header>
-      <h2 className='text-slate-300 text-md font-semibold underline'>Featured Posts</h2>
+      <h2 className='text-slate-500 text-md font-extralight'>Featured Posts</h2>
       {
         isLoading 
           ? 
@@ -48,8 +48,8 @@ export default function HomePage() {
             {
               featuredPosts.map(
                 post => (
-                  <li key={post.id}>
-                    <Link href={`questions/${post.id}`}>{post.title}</Link>
+                  <li key={post.id} className='text-xs'>
+                    <Link href={`questions/${post.id}`}>{post.title}</Link>...
                   </li>
                 )
               )
@@ -57,7 +57,7 @@ export default function HomePage() {
           </ul>
         )
       }
-      <h2 className='text-slate-300 text-md font-semibold underline'>Featured User</h2>
+      <h2 className='text-slate-500 text-md font-extralight'>Featured User</h2>
       {
         isLoading 
           ?

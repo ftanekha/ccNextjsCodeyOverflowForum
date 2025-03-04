@@ -4,7 +4,7 @@ import { POSTS, Post as PostType } from '../../../data/postData'
 function Page() {
   return (
     <>
-      <h2 className='my-4 text-slate-300'>Questions</h2>
+      <h2 className='my-4 text-slate-500 font-extrabold'>Questions</h2>
       <ul>
         {
           POSTS.map(

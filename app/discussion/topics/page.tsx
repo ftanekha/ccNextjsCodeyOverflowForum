@@ -5,7 +5,7 @@ import { capitalize } from '../../../lib/utils'
 function Topics(){
     return (
         <>
-            <h1 className='my-4 text-slate-300'> All Topics</h1>
+            <h1 className='my-4 text-slate-500 font-extrabold'> All Topics</h1>
             <ul>
                 {
                     CATEGORIES.map(

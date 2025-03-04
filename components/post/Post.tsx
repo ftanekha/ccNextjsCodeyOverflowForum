@@ -13,7 +13,7 @@ type PostProps = {
 
 function Post(
   { post: { userId, id, title, body } }: PostProps
-) {
+){
   return (
     <div className={styles.container}>
       <a href={`/discussion/questions/${id}`} >
@@ -21,7 +21,7 @@ function Post(
       </a>
       <p className='mb-2 text-sm text-slate-200'>{body}</p>
       <small className={styles.info}>
-        <a href={`/account/users/${userId}`} >
+        <a href={`/account/users/${userId}`} className='font-semibold'>
           User: {userId}
         </a>
       </small>

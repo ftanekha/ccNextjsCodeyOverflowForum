@@ -21,7 +21,7 @@ function Topic(){
     
     return (
         <div>
-            <h1 className='mt-6 mb-4 text-slate-300 text-md font-semibold underline'>{capitalize(currentPath)}</h1>
+            <h1 className='mt-6 mb-4 text-slate-500 text-md font-extrabold'>{capitalize(currentPath)}</h1>
             <ul>
                 {
                     topicPosts.map(
