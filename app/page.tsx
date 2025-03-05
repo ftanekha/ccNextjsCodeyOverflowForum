@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import {
-  getRandomElementsWithDelay,
+  getRandomPostsWithDelay,
+  getRandomUsersWithDelay,
   POSTS,
   USERS,
   Post,
@@ -17,10 +18,10 @@ export default function HomePage() {
 
   useEffect(
     () => {
-      getRandomElementsWithDelay(POSTS, 5)
+      getRandomPostsWithDelay(POSTS, 5)
       .then(randomPosts => setFeaturedPosts(randomPosts))
 
-      getRandomElementsWithDelay(USERS, 1)
+      getRandomUsersWithDelay(USERS, 1)
       .then(randomUsers => {
         if(randomUsers.length > 0) {
           setFeaturedUser(randomUsers[0]);

@@ -42,11 +42,28 @@ export const fetchCommentsByPostId = async (
   return COMMENTS.filter((comment) => comment.postId === postId);
 };
 
-export const getRandomElementsWithDelay = (
-  data: Array<User | Post>,
+export const getRandomUsersWithDelay = (
+  data: User[],
   count: number
-): Promise<Array<User | Post>> => {
-  return new Promise<Array<User | Post>>(
+): Promise<User[]> => {
+  return new Promise(
+    resolve => {
+      setTimeout(
+        ()=> {
+          const shuffledData = [...data].sort(() => 0.5 - Math.random());
+          const randomElements = shuffledData.slice(0, count);
+          resolve(randomElements);
+        }, 500
+      );
+    }
+  );
+};
+
+export const getRandomPostsWithDelay = (
+  data: Post[],
+  count: number
+): Promise<Post[]> => {
+  return new Promise(
     resolve => {
       setTimeout(
         ()=> {
