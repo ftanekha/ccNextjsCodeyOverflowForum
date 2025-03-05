@@ -4,15 +4,14 @@ import { notFound } from 'next/navigation'
 import { fetchUserData, fetchUserPosts, User, Post } from '../../../../lib/utils'
 
 function UserPage(
-  { params }: { params: { userId: any } }
+  { params }: { params: Promise<{userId?: string}> }
 ){
-  if(params instanceof Promise){
-    const { userId } = use(params)
-    
+    const {userId} = use(params)
+
     const [user, setUser] = useState<User | null>(null)
     const [userPosts, setUserPosts] = useState<Post[]>([])
     const [isLoading, setIsLoading] = useState(true)
-
+                 
     useEffect(
       ()=> {
         const userIdNumber = parseInt(userId, 10)
@@ -20,12 +19,14 @@ function UserPage(
         const fetchData = async () => {
           try{
             const fetchedUser = await fetchUserData(userIdNumber)
-            if(!fetchedUser) throw new Error('Invalid user ID')
+            if(!fetchedUser){ 
+              throw new Error('Invalid user ID')
+            }else{
+              setUser(fetchedUser)
+              const fetchedUserPosts = await fetchUserPosts(userIdNumber)
+              setUserPosts(fetchedUserPosts)
+            }
 
-            const fetchedUserPosts = await fetchUserPosts(userIdNumber)
-
-            setUser(fetchedUser)
-            setUserPosts(fetchedUserPosts)
           }catch(error){
             console.error(error)
           }finally{
@@ -64,7 +65,6 @@ function UserPage(
         </div>
       </>
     )
-  }
 }
 
 export default UserPage
