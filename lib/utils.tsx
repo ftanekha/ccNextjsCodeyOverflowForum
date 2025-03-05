@@ -43,10 +43,10 @@ export const fetchCommentsByPostId = async (
 };
 
 export const getRandomElementsWithDelay = (
-  data: any[],
+  data: Array<User | Post>,
   count: number
-): Promise<any[]> => {
-  return new Promise<any[]>(
+): Promise<Array<User | Post>> => {
+  return new Promise<Array<User | Post>>(
     resolve => {
       setTimeout(
         ()=> {

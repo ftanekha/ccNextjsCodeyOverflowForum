@@ -6,9 +6,9 @@ import { capitalize, fetchPostByTopic, Post } from '../../../../lib/utils'
 function Topic(){
     const [topicPosts, setTopicPosts] = useState<Post[]>([])
 
-    const topicId = usePathname()
-    const topicIdArr = topicId.split('/')
-    const currentPath = topicIdArr[topicIdArr.length - 1]
+    const path = usePathname()
+    const pathSegments = path.split('/')
+    const currentPath = pathSegments[pathSegments.length - 1]
 
     useEffect(
         () => {
@@ -16,7 +16,7 @@ function Topic(){
             .then(
                 fetchedPosts => setTopicPosts(fetchedPosts)
             )
-        }, [topicId]
+        }, [currentPath]
     )
     
     return (

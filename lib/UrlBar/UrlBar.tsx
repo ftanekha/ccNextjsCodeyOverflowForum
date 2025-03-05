@@ -13,7 +13,7 @@ function UrlBar({baseURL} : {baseURL: string}) {
   const [inputURL, setInputURL] = useState(baseURL)
 
   useEffect(
-    ()=> setInputURL(baseURL + pathname), [pathname]
+    ()=> setInputURL(baseURL + pathname), [baseURL, pathname]
   )
 
   useEffect(
