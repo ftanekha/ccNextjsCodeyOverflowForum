@@ -17,7 +17,7 @@ function RootLayout(
       <body className='my-8 `sm:w-4/5 md:w-1/2 md:mx-auto bg-slate-800 p-4 rounded-lg'>
         <Nav/>
         {children}
-        <UrlBar baseURL={`http://localhost:${process.env.PORT}`}/>
+        <UrlBar baseURL={`http://localhost:${process.env.PORT ?? 'encryptedPort'}`}/>
       </body>
     </html>
   )
